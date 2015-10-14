@@ -50,6 +50,12 @@
 							$nm = ( $total / ( 1000 * 60 ) ) % 60;
 							$ns = ( $total / 1000 ) % 60;
 							$nms = ( $total % 1000 );
+							if ( $nms < 100 ) {
+								$nms = '0'.$nms;
+								if ( $nms < 10 ) {
+									$nms = '0'.$nms;
+								}
+							}
 							return $nh.':'.$nm.':'.$ns.','.$nms;
 						}, $subject );
 						echo '<pre>';
